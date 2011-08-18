@@ -2,7 +2,7 @@ define(["dojo"], function(dojo) {
 	// module:
 	//		dojo/store/Undo
 	// summary:
-	//		TODOC
+	//		A wrapper that brings undo/redo functionality to a dojo.store
 
 dojo.getObject("store", true, dojo);
 
@@ -63,7 +63,7 @@ dojo.store.Undo = function(masterStore, /*dojo.store.__UndoArgs*/ options){
 			// Note: Assumes store.add will eventually call store.put
 			//			Is this always the case?
 			
-			var id = ("id" in options) ? options.id : masterStore.getIdentity(object);
+			var id = ("id" in directives) ? directives.id : masterStore.getIdentity(object);
 			var hasId = typeof id != "undefined";
 			
 			if (hasId) {
